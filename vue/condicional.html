@@ -9,12 +9,15 @@
 <body>
 
     <div id="app">
-        <h1 v-if="becado==true">Ya tengo beca :D</h1> 
-        <h1 v-else>Ya no tengo no becado :,(</h1> 
-        <button @click="conBeca()">Estas becado</button>
-        <button @click="sinBeca()">Ya no estas becado</button>
+        <h1 v-if="becado">Ya tengo beca :D</h1> 
+        <h1 v-else>Ya no tengo no becado :,(</h1>
+
+        <button @click="becado=true">Estas becado</button>
+        <button @click="becado=false">Ya no estas becado</button>
     </div>
     
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src= "condicionales.js"></script>
+</body>
+</html>
