@@ -1,4 +1,4 @@
-Vue.createApp({
+/*Vue.createApp({
     data(){
         return {
             carrito:[
@@ -18,4 +18,4 @@ Vue.createApp({
     }
    
 
-}).mount("#app")
+}).mount("#app")*/
