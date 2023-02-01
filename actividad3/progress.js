@@ -1,7 +1,7 @@
 Vue.createApp({
     data(){
         return {
-                progress:""
+                progress:0
             
         }
 
