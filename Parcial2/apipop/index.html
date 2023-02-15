@@ -16,15 +16,35 @@
        <div v-if="pokemon!=null" class="card" style="width: 18rem;">
         <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="..."> 
         <div class="card-body">
-          <h5 class="card-title">Nombre: {{pokemon.name}}</h5>
-          <h5 class="card-title">Altura: {{pokemon.height}}</h5>
+          <h5 class="card-title">{{pokemon.name}}</h5>
+         
+          <p>Habilidades</p>
+          <span v-for="abilidad in pokemon.abilities" class=" badge bg-success">
+            {{abilidad.ability.name}}
+           </span>
+
+           <ul v-for="indice in pokemon.game_indices" class="list-group list-group-vertical">
+            <li class="list-group-item">{{indice.version.name}}</li>
+          </ul>
+
+
+          <h5 class="card-title">Altura: {{pokemon.height}} </h5>
           <h5 class="card-title">Experiencia: {{pokemon.base_experience}}</h5>
           <h5 class="card-title">Id: {{pokemon.id}}</h5>
+
+
+          <ul v-for="indice in pokemon.game_indices" class="list-group">
+            <li class="list-group-item">{{indice.version.name}}</li>
+          </ul>
+           
           
         </div>
       </div> 
 
     </div>
+    
+      
+    </ul>
 
 
 
