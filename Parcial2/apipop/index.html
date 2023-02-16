@@ -9,9 +9,10 @@
 </head>
 <body>
 
+  
 
     <div class="container mt-3" id="app">
-       <button @click="getPokemon()" class="btn btn-primary mb-5">Generar</button>
+       <button @click="getPokemon()" class="btn btn-dark mb-5">Generar</button>
         
        <div v-if="pokemon!=null" class="card" style="width: 18rem;">
         <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="..."> 
@@ -19,23 +20,52 @@
           <h5 class="card-title">{{pokemon.name}}</h5>
          
           <p>Habilidades</p>
-          <span v-for="abilidad in pokemon.abilities" class=" badge bg-success">
-            {{abilidad.ability.name}}
+          <span v-for="sta in pokemon.stats" class=" badge bg-warning">
+            {{sta.stat.name}}
            </span>
 
-           <ul v-for="indice in pokemon.game_indices" class="list-group list-group-vertical">
-            <li class="list-group-item">{{indice.version.name}}</li>
-          </ul>
+           <p>Stats</p>
+           <span v-for="abilidad in pokemon.abilities" class=" badge bg-primary">
+             {{abilidad.ability.name}}
+            </span>
 
+           <p>Indice</p>
+           <span v-for="indice in pokemon.game_indices" class=" badge bg-info">
+             {{indice.version.name}}
+            </span>
+               
 
+          
           <h5 class="card-title">Altura: {{pokemon.height}} </h5>
           <h5 class="card-title">Experiencia: {{pokemon.base_experience}}</h5>
           <h5 class="card-title">Id: {{pokemon.id}}</h5>
 
+         
 
-          <ul v-for="indice in pokemon.game_indices" class="list-group">
-            <li class="list-group-item">{{indice.version.name}}</li>
-          </ul>
+           <h5>Tipo: </h5>
+          <div v-for="tipos in pokemon.types" class="container text-center">
+            <div class="row">
+              <div class="col"> 
+                {{tipos.type.name}}
+              </div>  
+
+              <!-- <ol v-for="mobe in pokemon.moves" class="list-group list-group-numbered">
+                <li class="list-group-item">{{mobe.move.name}}</li>
+            
+              </ol> -->
+              <h5>Move </h5>
+              <ul v-for="mobe in pokemon.moves" class="list">
+                <li class="list">{{mobe.move.name}}</li>
+              </ul>
+
+             
+             
+
+
+
+             
+
+        
            
           
         </div>
@@ -44,7 +74,7 @@
     </div>
     
       
-    </ul>
+    
 
 
 
