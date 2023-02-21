@@ -12,9 +12,11 @@
   
 
     <div class="container mt-3" id="app">
-       <button @click="getPokemon()" class="btn btn-dark mb-5">Generar</button>
+       <button  @click="getPokemon()" class="btn btn-dark mb-5">Generar</button>
         
-       <div v-if="pokemon!=null" class="card" style="width: 18rem;">
+
+
+       <div v-if="pokemon in pokemones"  v-if="pokemones in pokemon" class="card" style="width: 18rem;">
         <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="..."> 
         <div class="card-body">
           <h5 class="card-title">{{pokemon.name}}</h5>
@@ -51,7 +53,7 @@
 
               <!-- <ol v-for="mobe in pokemon.moves" class="list-group list-group-numbered">
                 <li class="list-group-item">{{mobe.move.name}}</li>
-            
+
               </ol> -->
               <h5>Move </h5>
               <ul v-for="mobe in pokemon.moves" class="list">
