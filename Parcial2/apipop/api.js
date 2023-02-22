@@ -1,7 +1,8 @@
 Vue.createApp({
     data(){
         return {
-            pokemones: []
+            pokemones: [],
+            loading: null //para que cargue bien en la pagina 
         }
     },
     mounted(){ //solo se actualiza la pagina y muestra los pokemones sin necesidad de usar el boton
@@ -9,10 +10,12 @@ Vue.createApp({
     },
     methods:{
         async getPokemon(){
+            this.loading=true;
             // get obtener
             // post crear recursos
             // put modificar recusos
-            // delete eliminar recursos
+            // delete eliminar recursos    
+       
             var i = 1;
             while(i<=200){
                 const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+i,{
@@ -28,7 +31,7 @@ Vue.createApp({
                 //});
                
             }
-
+            this.loading=false;
         } 
     }
    
