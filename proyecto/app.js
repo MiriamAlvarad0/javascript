@@ -1,37 +1,28 @@
 Vue.createApp({
     data(){
         return {
-            pokemones: [],
-            loading: null //para que cargue bien en la pagina 
+            bebidas: [],
+            loading: null,
+            nombre: ""
         }
     },
-    mounted(){ //solo se actualiza la pagina y muestra los pokemones sin necesidad de usar el boton
-        this.getPokemon();
-    },
+    /* mounted(){ //solo se actualiza la pagina y muestra los pokemones sin necesidad de usar el boton
+        this.getBebida(); */
+    
     methods:{
-        async getPokemon(){
+        async getBebida(){
             this.loading=true;
             // get obtener
             // post crear recursos
             // put modificar recusos
-            // delete eliminar recursos    
-       
-            var i = 1;
-            while(i<=200){
-                const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+i,{
+            // delete eliminar recursos   
+                const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + this.nombre ,{
                     method: "GET"
                 });
-                const pokemon= await response.json();
-                this.pokemones.push(pokemon);
-                i++;
+                const bebida= await response.json();
+                this.bebidas = bebida['drinks'];
 
-                //const random=Math.floor(Math.random()*200); //math.floor es para que de entero, porq el math random da decimal!!
-                //const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+random,{
-                    //method:"GET"
-                //});
-               
-            }
-            this.loading=false;
+            /* this.loading=false; */
         } 
     }
    

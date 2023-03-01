@@ -12,63 +12,31 @@
 
 
   <div class="container mt-3" id="app">
-
-    <div v-if="loading==true">   
-      <img src="imagen/loading.gif" alt="CARGANDO...">
-      <h4 class="text-warning">Cargando....</h4>
-    </div>
-       
-    <div class ="d-flex flex-wrap">
-
-      <div v-if="loading==false" v-for="pokemon in pokemones" class="card" style="width: 18rem;">
-        <img :src="pokemon.sprites.other.dream_world.front_default" class="card-img-top" alt="..."> 
-        <div class="card-body">
-          <h5 class="card-title">{{pokemon.name}}</h5> 
-         
-          <p>Habilidades</p>
-          <span v-for="sta in pokemon.stats" class=" badge bg-warning">
-            {{sta.stat.name}}
-           </span>
-
-           <h5>Stats</h5>
-           <span v-for="abilidad in pokemon.abilities" class=" badge bg-primary">
-             {{abilidad.ability.name}}
-            </span>
-            
-          <h5 class="card-title">Altura: {{pokemon.height}} </h5>
-          <h5 class="card-title">Experiencia: {{pokemon.base_experience}}</h5>
-          <h5 class="card-title">Id: {{pokemon.id}}</h5>
-
-           <h5>Tipo</h5>
-           <span v-for="tipos in pokemon.types" class=" badge bg-info">
-             {{tipos.type.name}}
-            </span>
-
-          <!-- <p>Indice</p>
-          <span v-for="tipos in pokemon.game_indices" class=" badge bg-info">
-            {{indice.version.name}}
-           </span> -->
-
-             <!--  <p>Move </p>
-              <span v-for="mobe in pokemon.moves" class="badge bg-info">
-                {{mobe.move.name}}
-              </span> -->
-                   
-  </div>
-    </div>
-          </div> 
-
-      
     
+    <div class="mt-3">
+      <h3>Buscar</h3>
+      <input v-model="nombre" type="text">
+      <button @click="getBebida()" class="mb-2">Enter</button>
+    </div>
+     <div v-for="bebida in bebidas" class="card" style="width: 18rem;">
+      <img :src="bebida.strDrinkThumb" class="card-img-top" alt="..."> 
+      <div class="card-body">
+        <h5 class="card-title">{{bebida.strDrink}}</h5> 
 
+      </div>  
 
+     <!--  <<p>Bebida</p>
+      <h1 v-for="nombre in bebida.drinks" class=" badge bg-warning">
+        {{nombre.strDrink}}
+      </h1>  -->
+  </div> 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src ="api.js"></script>
-    
+  
 
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src ="app.js"></script>
+  
 
 
 </body>
