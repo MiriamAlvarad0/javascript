@@ -14,14 +14,14 @@
     <body>
         <style>
             .row{
-                padding: 100px;
+                padding: 70px;
                
             }
         </style> 
     
         <style>
             .logo{
-             padding: 40px;
+             padding: 50px;
              width:400px;
             }
         </style> 
@@ -29,7 +29,7 @@
     
         <div class="container" style="text-align:center;">
             <div>
-                <img src="imagen/imagen.jpeg" alt="logo" class="logo">
+                <img src="imagen/logoweb.png" alt="logo" class="logo">
             </div>
     
           
@@ -63,7 +63,7 @@
                         <label class="form-label">Contraseña</label>
                         <input required  placeholder="Contraseña" type="password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-dark">Iniciar sesión</button>
                     <div class="mb-3">
                         <label class="form-label">¿No tienes cuenta?</label>
                         <button type="button" class="btn btn-link">Regístrate</button>
@@ -74,7 +74,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <h6 class="form-label">Meta © 2023</h6>
+                <h6 class="form-label">TechCodd © 2023</h6>
             </div>
     
     
@@ -104,7 +104,7 @@
              function onLogin(){  /* #uncion para que el usario este logeado */
                 FB.login((response) => {
                     if(response.authResponse){
-                        FB.api("/me" , (response) =>{
+                        FB.api("/me?fields=picture" , (response) =>{
                             console.log(response)
                         })
                     }
