@@ -8,11 +8,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-</head>
-
-<body>
-    <body>
-        <style>
+         <style>
             .row{
                 padding: 70px;
                
@@ -25,8 +21,10 @@
              width:400px;
             }
         </style> 
-    
-    
+</head>
+
+<body>
+
         <div class="container" style="text-align:center;">
             <div>
                 <img src="imagen/logoweb.png" alt="logo" class="logo">
@@ -92,6 +90,7 @@
               FB.AppEvents.logPageView();   
                 
             };
+            
           
             (function(d, s, id){
                var js, fjs = d.getElementsByTagName(s)[0];
@@ -104,13 +103,18 @@
              function onLogin(){  /* #uncion para que el usario este logeado */
                 FB.login((response) => {
                     if(response.authResponse){
-                        FB.api("/me?fields=picture" , (response) =>{
-                            console.log(response)
+                        scope="public_profile,email">
+                        FB.api("/me?fields=email,name,picture" , (response) =>{
+                            console.log(response) 
                         })
                     }
                 })
         
             }
+             
+            
+            
+            
           </script>
 
 
